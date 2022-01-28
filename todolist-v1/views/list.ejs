@@ -1,0 +1,25 @@
+<%- include('header'); -%>
+<body>
+
+    <div class="box" id="heading">
+        <h1>Good <%=listTitle%>!</h1>
+    </div>
+    
+    <div class="box"> 
+        <% for (let i = 0; i < kindOfToDo.length; kindOfToDo[i++]) { %>
+                <div class="item"> 
+                    <input type="checkbox">
+                    <p><%=kindOfToDo[i]%></p>
+                </div>
+        <% } %>
+
+                
+        <form class ="item" action="/" method="POST">
+            <input id="inputToDo" type="text" name="todo" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="addlist" value=<%= listTitle %>>+</button>
+        </form>
+    </div>
+
+</body>
+<%- include('footer'); -%>
+</html>
